@@ -484,7 +484,7 @@ html {
 body {
 	font-size: 14px;
 	font-size: 1rem;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: Myriad, Helvetica, Arial, sans-serif;
 	text-rendering: optimizeLegibility;
 	color: #444;
 }
@@ -524,13 +524,11 @@ a:hover {
 
 /* Page structure */
 .site {
-	padding: 0 24px;
-	padding: 0 1.714285714rem;
+	padding: none;
 	background-color: #fff;
 }
 .site-content {
-	margin: 24px 0 0;
-	margin: 1.714285714rem 0 0;
+	margin: none;
 }
 .widget-area {
 	margin: 24px 0 0;
@@ -539,8 +537,11 @@ a:hover {
 
 /* Header */
 .site-header {
-	padding: 24px 0;
-	padding: 1.714285714rem 0;
+	width: 180px;
+	float: left;
+	padding: 0;
+	background: #ffffff;
+	height: 100%;
 }
 .site-header h1,
 .site-header h2 {
@@ -1428,16 +1429,6 @@ img#wpstats {
 		float: right;
 		width: 80%;
 	}
-	.site {
-		margin: 0 auto;
-		max-width: 960px;
-		max-width: 68.571428571rem;
-		overflow: hidden;
-	}
-	.site-content {
-		float: left;
-		width: 65.104166667%;
-	}
 	body.template-front-page .site-content,
 	body.single-attachment .site-content,
 	body.full-width .site-content {
@@ -1459,8 +1450,6 @@ img#wpstats {
 	}
 	.main-navigation ul.nav-menu,
 	.main-navigation div.nav-menu > ul {
-		border-bottom: 1px solid #ededed;
-		border-top: 1px solid #ededed;
 		display: inline-block !important;
 		text-align: left;
 		width: 100%;
@@ -1471,8 +1460,11 @@ img#wpstats {
 	}
 	.main-navigation li a,
 	.main-navigation li {
-		display: inline-block;
+		/*display: inline-block;*/
 		text-decoration: none;
+		text-align: center;
+		font-size: 11px;
+		font-weight: normal;
 	}
 	.main-navigation li a {
 		border-bottom: 0;
@@ -1485,8 +1477,7 @@ img#wpstats {
 		color: #000;
 	}
 	.main-navigation li {
-		margin: 0 40px 0 0;
-		margin: 0 2.857142857rem 0 0;
+		margin: 0 0 0 0;
 		position: relative;
 	}
 	.main-navigation li ul {
@@ -1581,22 +1572,36 @@ img#wpstats {
 		margin-left: 48px;
 		margin-left: 3.428571429rem;
 	}
+
+	.site {
+		margin: 0;
+		max-width: 100%;
+		overflow: hidden;
+		height: auto !important;
+		min-height: 100%;
+	}
+
+	.site-content {
+		float: left;
+		width: 65.104166667%;
+		/*background: #3e5c6d;*/
+	}
 }
 
 /* Minimum width of 960 pixels. */
 @media screen and (min-width: 960px) {
 	body {
 		background-color: #e6e6e6;
+		height: 100%;
+     	position: relative;
 	}
-	body .site {
-		padding: 0 40px;
-		padding: 0 2.857142857rem;
-		margin-top: 48px;
-		margin-top: 3.428571429rem;
-		margin-bottom: 48px;
-		margin-bottom: 3.428571429rem;
-		box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	* {
+		margin: 0;
 	}
+	body,html{
+ 		height:100%;
+	}
+
 	body.custom-background-empty {
 		background-color: #fff;
 	}
@@ -1606,6 +1611,14 @@ img#wpstats {
 		margin-top: 0;
 		margin-bottom: 0;
 		box-shadow: none;
+	}
+	.wrapper{
+		width: auto;
+		background: #fbfbfb;
+		height: 100%;
+		overflow: hidden;
+		height: auto !important;
+		min-height: 100%;
 	}
 }
 
