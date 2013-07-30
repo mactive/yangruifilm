@@ -1,4 +1,4 @@
-
+a{cursor: pointer;}
 
 /* logo */
 .logo { 
@@ -23,7 +23,7 @@
 	width: 100%;
 	height: auto;
 	background: url("http://www.yangruifilm.com/wp-content/uploads/2013/07/big-1.jpg") no-repeat center center; }
-
+.slide_cell{ height:100%;width:100%; background-repeat: no-repeat; background-position: center; background-size: auto auto;}
 
 
 

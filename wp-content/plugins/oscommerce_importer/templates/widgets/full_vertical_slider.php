@@ -21,6 +21,11 @@
                 $(".current_slide").text(current + " of " + $("#slides").slides("status","total") );
             }
 
+            var _height = parseInt($("#main").height(), 10);
+            var _width = parseInt($("#main").width(), 10);
+
+            console.log(_height+" "+ _width);
+
             $("#slides").slides({
                 navigateEnd: function( current ) {
                     currentSlide( current );
@@ -28,13 +33,25 @@
                 loaded: function(){
                     currentSlide( 1 );
                 },
-                navigation: true,
-                direction: "up"
+                navigation: false,
+                pagination: false,
+                direction: "up",
+                width: _width,
+                height: _height
             });
             
             /*
                 Play/stop button
             */
+            $("a[rel=previous]").click(function(e){
+                $("#slides").slides("previous");
+            });
+            
+            $("a[rel=next]").click(function(e){
+                $("#slides").slides("next");
+            });
+
+
             $(".controls").click(function(e) {
                 e.preventDefault();
                 
@@ -63,49 +80,23 @@
 
 <?php if ( $posts ) : ?>
 
+    <!-- start SlidesJS slideshow -->
+    <div id="slides">
+    	<?php 
+    		foreach($posts as $post){
+                $post_meta = get_post_meta($post->ID);
+                $big_img = $post_meta['wpcf-big-image'];
+                $info_img = $post_meta['wpcf-info-image'];
+    	?>
+    		<div class="slide_cell" style="background-image:url(<?= $big_img[0] ?>);">
+                <a rel="previous"> previous</a>
+                <a rel="next"> next </a>
+            </div>
 
-            <!-- start SlidesJS slideshow -->
-        <div id="slides">
-                <img src="http://www.slidesjs.com/img/example-slide-350-1.jpg" width="780" height="300" alt="Slide 1">
-                
-                <img src="http://www.slidesjs.com/img/example-slide-350-2.jpg" width="780" height="300" alt="Slide 2">
-
-                <img src="http://www.slidesjs.com/img/example-slide-350-3.jpg" width="780" height="300" alt="Slide 3">
-
-                <img src="http://www.slidesjs.com/img/example-slide-350-4.jpg" width="780" height="300" alt="Slide 4">
-
-        </div>
-
-<div id="sidebar" style="width: <?php _e($width); ?>px !important;">
-	<ul class="news_image_slider">
-	<?php 
-		foreach($posts as $post){
-            $post_meta = get_post_meta($post->ID);
-
-
-
-			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
-			$url = $thumb['0'];
-	?>
-		<li>
-            <a href="<?php echo get_permalink($post->ID); ?>" title="<?php echo $post->post_title ?>" style="background-image:url(<?php echo $url; ?>);">
-            <b>
-
-                <?php
-                    $short_title = get_post_meta($post->ID,'short_title');
-                    if (empty($short_title[0])) {
-                        echo $post->post_title;
-                    }else{
-                        echo $short_title[0];
-                    }
-
-                ?>
-            </b>
-            </a>
-        </li>
-	<?php } ?>
-	</ul>
-</div>
+    	<?php } ?>
+    </div>
+    
+    <!-- <a href="#" class="controls">Play</a> -->
 
 
 <?php endif; ?>

@@ -42,7 +42,7 @@ class FullSlide_Widget extends WP_Widget {
 		// global $wpdb;
 		$args = array( 'numberposts' => $count, 'post_type' => $postType );
 		$posts = get_posts($args);
-		print_r($posts);
+		// print_r($posts);
 		wp_reset_postdata();
 
 
