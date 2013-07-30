@@ -16,8 +16,14 @@
 
 get_header(); ?>
 	
+	<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+		<div id="secondary" class="index_theme" >
+			<?php dynamic_sidebar( 'sidebar-2' ); ?>
+		</div><!-- #secondary -->
+	<?php endif; ?>
+<!-- 
 	<div class="slide_1">
 		<h1>dafkdsjklfas</h1>
 	</div>
-
+ -->
 <?php get_footer(); ?>
