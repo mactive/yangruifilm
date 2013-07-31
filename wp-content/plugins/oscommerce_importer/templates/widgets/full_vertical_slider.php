@@ -87,10 +87,14 @@
                 $post_meta = get_post_meta($post->ID);
                 $big_img = $post_meta['wpcf-big-image'];
                 $info_img = $post_meta['wpcf-info-image'];
+                
     	?>
     		<div class="slide_cell" style="background-image:url(<?= $big_img[0] ?>);">
-                <a rel="previous"> previous</a>
-                <a rel="next"> next </a>
+                <div class="control">
+                    <a class="prev_btn" rel="previous"></a>
+                    <div class="video_info" style="background-image:url(<?= $info_img[0] ?>);"></div>
+                    <a class="next_btn" rel="next"> </a>
+                </div>
             </div>
 
     	<?php } ?>

@@ -23,12 +23,14 @@ a{cursor: pointer;}
 	width: 100%;
 	height: auto;
 	background: url("http://www.yangruifilm.com/wp-content/uploads/2013/07/big-1.jpg") no-repeat center center; }
-.slide_cell{ height:100%;width:100%; background-repeat: no-repeat; background-position: center; background-size: auto auto;}
+.slide_cell{ height:100%;width:100%; position: relative; background-repeat: no-repeat; background-position: center; background-size:cover; background-color: #3e5c6d;}
+.slide_cell .control { margin: 20px 80px; }
+.slide_cell .control .video_info{ width:170px; height: 120px; margin: 25px 0; background-position: left center; background-repeat: no-repeat; }
 
+.slide_cell .control .prev_btn{ width: 64px; height: 35px; background: url("img/arrows.png") no-repeat top left; display: block;}
+.slide_cell .control .next_btn{ width: 64px; height: 35px; background: url("img/arrows.png") no-repeat bottom left; display: block;}
 
-
-
-
+.slide_cell .control .prev_btn:hover,.slide_cell .control .next_btn:hover{ background-image:url("img/arrows_hover.png"); }
 
 
 
