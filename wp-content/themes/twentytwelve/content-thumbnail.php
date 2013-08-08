@@ -23,18 +23,18 @@
 			// meta
 			$post_meta 	= get_post_meta($post->ID);
             $customer 	= $post_meta['wpcf-customer'][0];
-            $agency 	= $post_meta['wpcf-agency'][0];
-            $production = $post_meta['wpcf-production'][0];
 
 		?>
 
 
 		<div class="video_thumbnail" style="background-image:url(<?= $thumb[0] ?>);">
 			<div class="thunbmail_info">
-				篇名: <?php the_title(); ?><br>
-				客户: <?= $customer; ?><br>
-				代理: <?= $agency; ?><br>
-				制作: <?= $production; ?>
+				<span><?php the_title(); ?><?= $customer; ?></span>
+
+				<a class="play"></a>
+				<a class="download"></a>
+				<a class="share"></a>
+
 			</div>
 		</div>
 		

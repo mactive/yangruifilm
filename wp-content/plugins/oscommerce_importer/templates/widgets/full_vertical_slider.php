@@ -44,7 +44,7 @@
                 Play/stop button
             */
             // button hover
-            var offset_dis = "10px";
+            var offset_dis = "5px";
             var offset_dur = 200 ;
             $("a[rel=previous]").hover(
                 function(){
