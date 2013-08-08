@@ -31,6 +31,7 @@
 <?php wp_head(); ?>
 <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo( 'template_url' ); ?>/img/favicon.png" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/mactive.css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/jquery.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function ($) {

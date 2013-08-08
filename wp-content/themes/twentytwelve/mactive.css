@@ -24,13 +24,17 @@ a{cursor: pointer;}
 	height: auto;
 	background: url("http://www.yangruifilm.com/wp-content/uploads/2013/07/big-1.jpg") no-repeat center center; }
 .slide_cell{ height:100%;width:100%; position: relative; background-repeat: no-repeat; background-position: center; background-size:cover; background-color: #3e5c6d;}
-.slide_cell .control { margin: 20px 80px; }
-.slide_cell .control .video_info{ width:170px; height: 120px; margin: 25px 0; background-position: left center; background-repeat: no-repeat; }
+.slide_cell .control { margin: 20px 80px; position: relative; padding: 20px 0px;}
+.slide_cell .control .video_info{ width:80%; height: 140px; margin: 45px 0; background-position: left center; background-repeat: no-repeat; }
+.slide_cell .control .video_info .video_title{display:block; font-family: 'Open Sans'; font-weight: 700; font-size: 80px; color: #fff;}
+.slide_cell .control .video_info .video_customer{display:block; font-size: 26px; font-weight: bold; color: #fff;}
 
-.slide_cell .control .prev_btn{ width: 64px; height: 35px; background: url("img/arrows.png") no-repeat top left; display: block;}
-.slide_cell .control .next_btn{ width: 64px; height: 35px; background: url("img/arrows.png") no-repeat bottom left; display: block;}
 
-.slide_cell .control .prev_btn:hover,.slide_cell .control .next_btn:hover{ background-image:url("img/arrows_hover.png"); }
+
+.slide_cell .control .prev_btn{ width: 64px; height: 35px; background: url("img/arrows.png") no-repeat top left; display: block; position: absolute;top:0px;}
+.slide_cell .control .next_btn{ width: 64px; height: 35px; background: url("img/arrows.png") no-repeat bottom left; display: block;position: absolute; bottom: 0px;}
+
+
 
 .video_thumbnail {float: left; width: 33.3%; height: 300px; background-repeat: no-repeat; background-size: cover; background-position: center; position: relative; }
 .video_thumbnail .thunbmail_info {display: none;}

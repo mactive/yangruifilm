@@ -43,6 +43,36 @@
             /*
                 Play/stop button
             */
+            // button hover
+            var offset_dis = "10px";
+            var offset_dur = 200 ;
+            $("a[rel=previous]").hover(
+                function(){
+                    $(this).filter(':not(:animated)').animate({
+                        top: offset_dis
+                    },offset_dur);
+                },
+                function() {
+                    $(this).animate({
+                        top: '0px'
+                    },offset_dur);
+                }
+            );
+
+            $("a[rel=next]").hover(
+                function(){
+                    $(this).filter(':not(:animated)').animate({
+                        bottom: offset_dis
+                    },offset_dur);
+                },
+                function() {
+                    $(this).animate({
+                        bottom: '0px'
+                    },offset_dur);
+                }
+            );
+            
+
             $("a[rel=previous]").click(function(e){
                 $("#slides").slides("previous");
             });
@@ -86,13 +116,17 @@
     		foreach($posts as $post){
                 $post_meta = get_post_meta($post->ID);
                 $big_img = $post_meta['wpcf-big-image'];
-                $info_img = $post_meta['wpcf-info-image'];
+                // $info_img = $post_meta['wpcf-info-image'];
+                $customer   = $post_meta['wpcf-customer'][0];
                 
     	?>
     		<div class="slide_cell" style="background-image:url(<?= $big_img[0] ?>);">
                 <div class="control">
                     <a class="prev_btn" rel="previous"></a>
-                    <div class="video_info" style="background-image:url(<?= $info_img[0] ?>);"></div>
+                    <div class="video_info">
+                        <span class="video_title"><?= $post->post_title ?></span>
+                        <span class="video_customer"><?= $customer ?></span>
+                    </div>
                     <a class="next_btn" rel="next"> </a>
                 </div>
             </div>
