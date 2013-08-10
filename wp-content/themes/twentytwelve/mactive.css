@@ -27,7 +27,7 @@ a{cursor: pointer;}
 .slide_cell .slide_cell_bg{ cursor: pointer; position: absolute; top:0; left:0; z-index: 0; height:100%;width:100%; background-repeat: no-repeat; background-position: center; background-size:cover; background-color: #3e5c6d;}
 .slide_cell .control { z-index: 20; margin: 20px 80px; position: relative; padding: 20px 0px;}
 .slide_cell .control .video_info{ cursor: pointer; width:80%; height: 140px; margin: 45px 0; background-position: left center; background-repeat: no-repeat; }
-.slide_cell .control .video_info .video_title{display:block; font-family: 'Open Sans'; font-weight: 700; font-size: 80px; color: #fff;}
+.slide_cell .control .video_info .video_title{display:block; font-weight: 700; font-size: 80px; color: #fff;}
 .slide_cell .control .video_info .video_customer{display:block; font-size: 26px; font-weight: bold; color: #fff;}
 
 
