@@ -22,7 +22,7 @@
                     $video_play = $post_meta['wpcf-video-for-play'][0];
                 }
     	?>
-    		<div class="slide_cell" style="background-image:url(<?= $big_img[0] ?>);">
+    		<div class="slide_cell">
                 <div class="control">
                     <a class="prev_btn" rel="previous"></a>
                     <div class="video_info" rel="<?= $video_play ?>">
@@ -31,6 +31,7 @@
                     </div>
                     <a class="next_btn" rel="next"> </a>
                 </div>
+                <div class="slide_cell_bg" rel="<?= $video_play ?>" style="background-image:url(<?= $big_img[0] ?>);"></div>
             </div>
 
     	<?php } ?>
@@ -152,7 +153,7 @@
             var video_width  = $(window).width() * 0.8;
             var video_height = video_width * 9 / 16;
 
-            $('div.video_info').on('click',function( e ){
+            $('div.slide_cell_bg, div.video_info').on('click',function( e ){
                 console.log($(this).attr('rel'));
                 $('div.overlay').fadeIn();
 
