@@ -21,7 +21,6 @@ get_header(); ?>
 
 	<section id="primary">
 		<div id="content" role="main">
-
 		<?php if ( have_posts() ) : ?>
 
 
@@ -107,6 +106,5 @@ get_header(); ?>
 
 
 	</script>
-
 
 <?php get_footer(); ?>

@@ -1578,7 +1578,7 @@ img#wpstats {
 
 	.site-content {
 		float: left;
-		width: 65.104166667%;
+		width: 90%; padding:3% 5%; font-size: 14px;
 		/*background: #3e5c6d;*/
 	}
 }
