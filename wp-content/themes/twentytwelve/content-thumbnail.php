@@ -23,18 +23,22 @@
 			// meta
 			$post_meta 	= get_post_meta($post->ID);
             $customer 	= $post_meta['wpcf-customer'][0];
-
+            if (is_array($post_meta['wpcf-video-for-play'])) {
+            	$video_play = $post_meta['wpcf-video-for-play'][0];
+            }
+            // $video_download = $post_meta['wpcf-video-for-download'][0];
+            // <?php the_permalink();
 		?>
 
 
 		<div class="video_thumbnail" style="background-image:url(<?= $thumb[0] ?>);">
 			<div class="thunbmail_info">
-				<span><?php the_title(); ?><?= $customer; ?></span>
-
-				<a class="play"></a>
-				<a class="download"></a>
-				<a class="share"></a>
-
+				<div class="info-title"><?php the_title(); ?> <?= $customer; ?></div>
+				<div class="info-btn">
+					<a class="play" rel="<?= $video_play?>"></a>
+					<a class="download"></a>
+					<a class="share"></a>
+				</div>
 			</div>
 		</div>
 		

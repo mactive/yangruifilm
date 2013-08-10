@@ -47,18 +47,66 @@ get_header(); ?>
 		</div><!-- #content -->
 	</section><!-- #primary -->
 
+	<div class="overlay">
+
+		<!--[if !IE 6]><!-->
+		<div id="media_area">
+			<a class="overlay-close"></a>
+
+			<div id="mediaplayer" class="videoplayer">
+			</div>
+		</div>
+		<!--<![endif]-->
+	</div>
 
 	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/archive-videowork.js"></script>
+	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/jwplayer/jwplayer.js"></script>
 	<script type="text/javascript">
 	
 	(function($){
 
+		// videowork layout 
 		var options = {
 		    mainBody: $('#content')
 		};
 		archive_videowork.init(options);
 
+
+
+		// play and download
+		var video_width  = $(window).width() * 0.8;
+		var video_height = video_width * 9 / 16;
+
+		$('a.play').on('click',function( e ){
+			console.log($(this).attr('rel'));
+			$('div.overlay').fadeIn();
+
+			jwplayer("mediaplayer").setup({
+				flashplayer: "<?php bloginfo( 'template_url' ); ?>/jwplayer/player.swf",
+				width:video_width,
+				height:video_height,
+				levels: [
+	           		{file: $(this).attr('rel')}
+	            ],
+	            autostart: true
+			});
+		});
+
+		//jwplayer().getPlugin("controlbar").hide();
+		var marginOffset = $(window).height() - video_height;
+		console.log(marginOffset);
+		$("#media_area").css('margin', marginOffset/2+'px auto');
+		$("#media_area").css({'width':video_width+'px','':video_height+'px'});
+
+		// close 
+		$('a.overlay-close').click(function(){
+			$('div.overlay').fadeOut();
+		})
+
 	})(jQuery);
+
+
 	</script>
+
 
 <?php get_footer(); ?>
