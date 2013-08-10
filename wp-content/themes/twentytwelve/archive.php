@@ -47,4 +47,18 @@ get_header(); ?>
 		</div><!-- #content -->
 	</section><!-- #primary -->
 
+
+	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/archive-videowork.js"></script>
+	<script type="text/javascript">
+	
+	(function($){
+
+		var options = {
+		    mainBody: $('#content')
+		};
+		archive_videowork.init(options);
+
+	})(jQuery);
+	</script>
+
 <?php get_footer(); ?>
