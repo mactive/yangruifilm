@@ -92,12 +92,12 @@
             $("a[rel=previous]").hover(
                 function(){
                     $(this).filter(':not(:animated)').animate({
-                        top: offset_dis
+                        top: '0px'
                     },offset_dur);
                 },
                 function() {
                     $(this).animate({
-                        top: '0px'
+                        top: offset_dis
                     },offset_dur);
                 }
             );
@@ -105,12 +105,12 @@
             $("a[rel=next]").hover(
                 function(){
                     $(this).filter(':not(:animated)').animate({
-                        bottom: offset_dis
+                        bottom: '0px'
                     },offset_dur);
                 },
                 function() {
                     $(this).animate({
-                        bottom: '0px'
+                        bottom: offset_dis
                     },offset_dur);
                 }
             );
