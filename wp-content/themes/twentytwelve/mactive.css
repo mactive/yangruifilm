@@ -32,8 +32,18 @@ a{cursor: pointer;}
 
 
 
-.slide_cell .control .prev_btn{ width: 64px; height: 35px; background: url("img/arrows.png") no-repeat top left; display: block; position: absolute;top:0px;}
-.slide_cell .control .next_btn{ width: 64px; height: 35px; background: url("img/arrows.png") no-repeat bottom left; display: block;position: absolute; bottom: 0px;}
+.slide_cell .control .prev_btn{ 
+	width: 64px; height: 35px; 
+	background: url("img/arrows.png") no-repeat top left; 
+	display: block; position: absolute;
+	top:5px;
+}
+.slide_cell .control .next_btn{ 
+	width: 64px; height: 35px; 
+	background: url("img/arrows.png") no-repeat bottom left; 
+	display: block;position: absolute; 
+	bottom: 5px;
+}
 
 
 
