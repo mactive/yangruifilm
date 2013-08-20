@@ -77,7 +77,7 @@ get_header(); ?>
 		    var video_width  = $(window).width() * 0.8;
 		    var video_height = video_width * 9 / 16;
 
-		    $('div.thunbmail_info').on('click',function( e ){
+		    $('div.thunbmail_info > .info_bg').on('click',function( e ){
 		      console.log($(this).attr('rel'));
 		      $('div.overlay').fadeIn();
 
@@ -104,6 +104,10 @@ get_header(); ?>
 		    $('a.overlay-close').click(function(){
 		      $('div.overlay').fadeOut();
 		    })
+
+		    $('a.share').click(function(e){
+		    	e.preventDefault();
+		    });
 
 		  })(jQuery);
 

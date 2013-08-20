@@ -27,17 +27,18 @@
             	$video_play = $post_meta['wpcf-video-for-play'][0];
             }
             $video_download = $post_meta['wpcf-video-for-download'][0];
-            // <?php the_permalink();
 		?>
 
 
 		<div class="video_thumbnail" style="background-image:url(<?= $thumb[0] ?>);">
-			<div class="thunbmail_info" rel="<?= $video_play?>">
+			<div class="thunbmail_info">
 				<div class="info-title"><?php the_title(); ?> <?= $customer; ?></div>
 				<div class="info-btn">
 					<a class="download" href="<?=$video_download ?>" target="_blank"></a>
-					<a class="share"></a>
+					<a class="share" href="<?php the_permalink();?>"></a>
 				</div>
+
+				<div class="info_bg" rel="<?= $video_play?>"></div>
 			</div>
 		</div>
 		
