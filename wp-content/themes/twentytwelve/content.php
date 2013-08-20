@@ -7,34 +7,28 @@
  * @since Twenty Twelve 1.0
  */
 ?>
-
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
 		<?php 
 			global $post;
-			$id = $post->ID; 
-			$args = array( 'post_type' => 'attachment', 'post_parent'=> $id, 'post_mime_type' => 'image/jpeg' );
-			$myposts = get_posts( $args );
-			$attachment = $myposts[0];
-			$thumb = wp_get_attachment_image_src( $attachment->ID, 'large' );
 
-			echo $thumb[0];
+			$post_meta = get_post_meta($post->ID);
+            $big_img = $post_meta['wpcf-big-image'];
+            // $info_img = $post_meta['wpcf-info-image'];
+            $customer   = $post_meta['wpcf-customer'][0];
+            if (is_array($post_meta['wpcf-video-for-play'])) {
+                $video_play = $post_meta['wpcf-video-for-play'][0];
+            }
+			// echo $big_img[0];
 		?>
 
-		<header class="entry-header">
-			<?php the_post_thumbnail(); ?>
-			<?php if ( is_single() ) : ?>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php else : ?>
-			<h1 class="entry-title">
-				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
-			</h1>
-			<?php endif; // is_single() ?>
+		<div class="slide_cell">
+            <div class="control">
+                <div class="video_info" rel="<?= $video_play ?>">
+                    <span class="video_title"><?= $post->post_title ?></span>
+                    <span class="video_customer"><?= $customer ?></span>
 
-			<div class="entry-content">
-				<?php the_content(); ?>
-			</div><!-- .entry-content -->
-
-		</header><!-- .entry-header -->
-		
-	</article><!-- #post -->
+                </div>
+            </div>
+            <div class="slide_cell_bg" rel="<?= $video_play ?>" style="background-image:url(<?= $big_img[0] ?>);">
+            </div>
+        </div>

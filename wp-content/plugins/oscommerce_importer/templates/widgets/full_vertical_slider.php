@@ -155,6 +155,7 @@
 
             $('div.slide_cell_bg, div.video_info').on('click',function( e ){
                 console.log($(this).attr('rel'));
+                $('div.overlay').children('#media_area').show();
                 $('div.overlay').fadeIn();
 
                 jwplayer("mediaplayer").setup({
