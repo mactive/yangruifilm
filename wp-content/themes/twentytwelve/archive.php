@@ -63,8 +63,7 @@ get_header(); ?>
 			<div class="share-cell weibo_share">
 
 			</div>
-			<div class="share-cell">
-				Tencent Weibo
+			<div class="share-cell tecent_share">
 			</div>
 			<div class="share-cell">
 				Others
@@ -121,6 +120,9 @@ get_header(); ?>
 
 		    $('div.info-btn > .share').on('click',function( e ){
 		    	e.preventDefault();
+		    	var _url = $(this).attr('rel');
+		    	var _title = "杨锐导演 -- 作品 " + $(this).attr('title');
+
 		      $('div.overlay').children('#media_area').hide();
 		      $('div.overlay').children('#share_area').show();
 		      $('div.overlay').fadeIn();
@@ -128,17 +130,17 @@ get_header(); ?>
 		      $("#share_area").css('margin', marginOffset/2+'px auto');
 		   	  $("#share_area").css({'width':video_width+'px','':video_height+'px'});
 
-		   	  //====================
+		   	  //========================================
 		   	  // weibo code
-		   	  //====================
+		   	  //========================================
 
 			  var _w = 142 , _h = 66;
 			  var param = {
-			    url:$(this).attr('rel'),
+			    url:_url,
 			    type:'4',
 			    count:'1', /**是否显示分享数，1显示(可选)*/
 			    appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
-			    title:'', /**分享的文字内容(可选，默认为所在页面的title)*/
+			    title: _title, /**分享的文字内容(可选，默认为所在页面的title)*/
 			    pic:'', /**分享图片的路径(可选)*/
 			    ralateUid:'1217609444', /**关联用户的UID，分享微博会@该用户(可选)*/
 			    language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
@@ -151,6 +153,18 @@ get_header(); ?>
 			  $('.weibo_share').html('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://service.weibo.com/staticjs/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>');
 						
 			  $('.weibo_share').append('<br><br><br>Sina Weibo');
+
+			  //========================================
+		   	  // tencent code
+		   	  //========================================
+
+		   	  var tecent_html = '<a href="http://share.v.t.qq.com/index.php?c=share&a=index&url=';
+				tecent_html+= _url +'&title=' + _title ;
+				tecent_html+= '"><img src="http://open.t.qq.com/apps/share/images/s/b32.png" alt=""></a>';
+
+		   	  $('.tecent_share').html(tecent_html);
+		   	  $('.tecent_share').append('<br><br><br>Tencent Weibo');
+		
 
 		    });
 		    

@@ -22,6 +22,7 @@
 
 			// meta
 			$post_meta 	= get_post_meta($post->ID);
+			$title = $post->post_title;
             $customer 	= $post_meta['wpcf-customer'][0];
             if (is_array($post_meta['wpcf-video-for-play'])) {
             	$video_play = $post_meta['wpcf-video-for-play'][0];
@@ -35,7 +36,7 @@
 				<div class="info-title"><?php the_title(); ?> <?= $customer; ?></div>
 				<div class="info-btn">
 					<a class="download" href="<?=$video_download ?>" target="_blank"></a>
-					<a class="share" rel="<?php the_permalink();?>"></a>
+					<a class="share" rel="<?php the_permalink();?>" title="<?=$title  ?>"></a>
 				</div>
 
 				<div class="info_bg" rel="<?= $video_play?>"></div>
