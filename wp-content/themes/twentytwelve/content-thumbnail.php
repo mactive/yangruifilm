@@ -26,17 +26,16 @@
             if (is_array($post_meta['wpcf-video-for-play'])) {
             	$video_play = $post_meta['wpcf-video-for-play'][0];
             }
-            // $video_download = $post_meta['wpcf-video-for-download'][0];
+            $video_download = $post_meta['wpcf-video-for-download'][0];
             // <?php the_permalink();
 		?>
 
 
 		<div class="video_thumbnail" style="background-image:url(<?= $thumb[0] ?>);">
-			<div class="thunbmail_info">
+			<div class="thunbmail_info" rel="<?= $video_play?>">
 				<div class="info-title"><?php the_title(); ?> <?= $customer; ?></div>
 				<div class="info-btn">
-					<a class="play" rel="<?= $video_play?>"></a>
-					<a class="download"></a>
+					<a class="download" href="<?=$video_download ?>" target="_blank"></a>
 					<a class="share"></a>
 				</div>
 			</div>
