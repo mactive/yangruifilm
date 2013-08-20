@@ -56,6 +56,21 @@ get_header(); ?>
 			</div>
 		</div>
 		<!--<![endif]-->
+
+		<div id="share_area">
+			<a class="overlay-close"></a>
+
+			<div class="share-cell weibo_share">
+
+			</div>
+			<div class="share-cell">
+				Tencent Weibo
+			</div>
+			<div class="share-cell">
+				Others
+			</div>
+			
+		</div>
 	</div>
 
 	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/jwplayer/jwplayer.js"></script>
@@ -73,12 +88,16 @@ get_header(); ?>
 
 
 
+
 		    // play and download
 		    var video_width  = $(window).width() * 0.8;
 		    var video_height = video_width * 9 / 16;
 
 		    $('div.thunbmail_info > .info_bg').on('click',function( e ){
 		      console.log($(this).attr('rel'));
+		      $('div.overlay').children('#media_area').show();
+		      $('div.overlay').children('#share_area').hide();
+
 		      $('div.overlay').fadeIn();
 
 		      jwplayer("mediaplayer").setup({
@@ -92,22 +111,58 @@ get_header(); ?>
 		      });
 		    });
 
-		    
-
 		    //jwplayer().getPlugin("controlbar").hide();
 		    var marginOffset = $(window).height() - video_height;
 		    console.log(marginOffset);
 		    $("#media_area").css('margin', marginOffset/2+'px auto');
 		    $("#media_area").css({'width':video_width+'px','':video_height+'px'});
 
+
+
+		    $('div.info-btn > .share').on('click',function( e ){
+		    	e.preventDefault();
+		      $('div.overlay').children('#media_area').hide();
+		      $('div.overlay').children('#share_area').show();
+		      $('div.overlay').fadeIn();
+
+		      $("#share_area").css('margin', marginOffset/2+'px auto');
+		   	  $("#share_area").css({'width':video_width+'px','':video_height+'px'});
+
+		   	  //====================
+		   	  // weibo code
+		   	  //====================
+
+			  var _w = 142 , _h = 66;
+			  var param = {
+			    url:$(this).attr('rel'),
+			    type:'4',
+			    count:'1', /**是否显示分享数，1显示(可选)*/
+			    appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
+			    title:'', /**分享的文字内容(可选，默认为所在页面的title)*/
+			    pic:'', /**分享图片的路径(可选)*/
+			    ralateUid:'1217609444', /**关联用户的UID，分享微博会@该用户(可选)*/
+			    language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+			    dpc:1
+			  }
+			  var temp = [];
+			  for( var p in param ){
+			    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+			  };
+			  $('.weibo_share').html('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://service.weibo.com/staticjs/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>');
+						
+			  $('.weibo_share').append('<br><br><br>Sina Weibo');
+
+		    });
+		    
+
+
+
+
+
 		    // close 
 		    $('a.overlay-close').click(function(){
 		      $('div.overlay').fadeOut();
 		    })
-
-		    $('a.share').click(function(e){
-		    	e.preventDefault();
-		    });
 
 		  })(jQuery);
 

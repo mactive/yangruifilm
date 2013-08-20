@@ -35,7 +35,7 @@
 				<div class="info-title"><?php the_title(); ?> <?= $customer; ?></div>
 				<div class="info-btn">
 					<a class="download" href="<?=$video_download ?>" target="_blank"></a>
-					<a class="share" href="<?php the_permalink();?>"></a>
+					<a class="share" rel="<?php the_permalink();?>"></a>
 				</div>
 
 				<div class="info_bg" rel="<?= $video_play?>"></div>
