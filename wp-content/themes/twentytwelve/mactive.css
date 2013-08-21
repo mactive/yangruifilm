@@ -55,6 +55,7 @@ a{cursor: pointer;}
 	display: block; color: #fff;
 	position: absolute; height: 100%; bottom: 0; width: 100%;
 	line-height: 30px;
+	cursor: pointer;
 }
 .video_thumbnail:hover .thunbmail_info .info_bg{ 
 	background-color:rgba(0, 0, 0, 0.68);
@@ -72,7 +73,7 @@ a{cursor: pointer;}
 }
 .video_thumbnail .thunbmail_info .info-customer{}
 .video_thumbnail .thunbmail_info .info-btn{ 
-	height: 25px; width: 200px;
+	height: 25px; width:80px;
 	position: absolute;
  	left:30px; bottom: 20%; z-index: 100;
  }
@@ -104,6 +105,10 @@ a{cursor: pointer;}
     background: rgba(0,0,0,0.9);
   }
 
+#more-5 a.more{ 
+	display: block; 
+	float: right; 
+}
 
 /* share_area */
 #share_area{
@@ -341,3 +346,23 @@ span.block:hover, li.block:hover{
 	background: #f0f0f0;
 	box-shadow:inset 0 1px #f6f6f6;
 }
+
+.contact-form{
+	line-height: 50px;
+}
+span.input-title{
+	padding-left: 20px;
+	display: inline-block;
+}
+
+.contact-info{
+	position: absolute;
+	right: 30px;
+	bottom:  50px;
+}
+.contact-info .wechat{
+	height: 240px;
+}
+.contact-info .wechat img{ float: right; display: block; }
+
+
