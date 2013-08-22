@@ -142,7 +142,7 @@ get_header(); ?>
 			    appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
 			    title: _title, /**分享的文字内容(可选，默认为所在页面的title)*/
 			    pic:'', /**分享图片的路径(可选)*/
-			    ralateUid:'1217609444', /**关联用户的UID，分享微博会@该用户(可选)*/
+			    ralateUid:'2342823483', /**关联用户的UID，分享微博会@该用户(可选)*/
 			    language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
 			    dpc:1
 			  }
@@ -168,9 +168,6 @@ get_header(); ?>
 
 		    });
 		    
-
-
-
 
 
 		    // close 
