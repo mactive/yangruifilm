@@ -49,8 +49,8 @@
 		</nav><!-- #site-navigation -->
 
 		<div class="sns">
-			<a class="flickr" href="#"></a>
-			<a class="weibo" href="#"></a>
+			<a class="flickr" href="http://www.flickr.com/photos/rayrayang/"></a>
+			<a class="weibo" href="http://weibo.com/directorray"></a>
 		</div>
 
 		<?php $header_image = get_header_image();
