@@ -64,7 +64,7 @@
                 $(".current_slide").text(current + " of " + $("#slides").slides("status","total") );
             }
 
-            var _height = parseInt($("#main").height(), 10);
+            var _height = parseInt( $(window).height(), 10);
             var _width = parseInt($("#main").width(), 10);
 
             console.log(_height+" "+ _width);
