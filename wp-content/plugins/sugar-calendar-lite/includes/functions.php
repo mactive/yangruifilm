@@ -34,7 +34,7 @@ function sc_draw_calendar( $month, $year ){
 
 	$calendar.= '<tr class="calendar-row">';
 		for( $i = 0; $i <= 6; $i++ ) {
-			$calendar .= '<th class="calendar-day-head">' . $day_names[$i] .'</th>';
+			$calendar .= '<th class="calendar-day-head"><div class="sc_day_div">' . $day_names[$i] .'</div></th>';
 		}
 	$calendar .= '</tr>';
 

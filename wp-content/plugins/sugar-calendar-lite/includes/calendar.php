@@ -50,8 +50,8 @@ function sc_get_events_calendar( $year_override = null ) {
 			);
 			?>
 
-			<form id="sc_event_select" class="sc_events_form" method="POST" action="#sc_events_calendar_<?php echo uniqid(); ?>">
-				<!-- <select name="sc_month">
+<!-- 			<form id="sc_event_select" class="sc_events_form" method="POST" action="#sc_events_calendar_<?php echo uniqid(); ?>">
+				<select name="sc_month">
 				  <?php
 				  foreach( $months as $key => $month ) {
 				  	echo '<option value="' . absint( $key ) . '" ' . selected( $key, $today_month, false ) . '>'. esc_attr( $month ) .'</option>';
@@ -70,8 +70,8 @@ function sc_get_events_calendar( $year_override = null ) {
 				</select>
 				<input id="sc_submit" type="submit" class="sc_calendar_submit" value="<?php _e('Go', 'pippin_sc'); ?>"/>
 				<input type="hidden" name="action" value="sc_load_calendar"/>
-				<input name="sc_nonce" type="hidden" value="<?php echo wp_create_nonce('sc_calendar_nonce') ?>" /> -->
-			</form>
+				<input name="sc_nonce" type="hidden" value="<?php echo wp_create_nonce('sc_calendar_nonce') ?>" />
+			</form> -->
 
 			<h2 id="sc_calendar_title"><?php echo esc_html( $months[$today_month] . ' ' . $today_year ); ?></h2>
 			<?php echo sc_calendar_next_prev( $today_month, $today_year ); ?>
@@ -97,7 +97,7 @@ function sc_calendar_next_prev( $today_month, $today_year ) {
 			$prev_month = $prev_month < 1 ? 12 : $prev_month;
 			$prev_year 	= $prev_month < 1 ? $today_year - 1 : $today_year;
 		?>
-		<form id="sc_event_nav_prev" class="sc_events_form" method="POST" action="#sc_events_calendar_<?php echo uniqid(); ?>">
+		<form id="sc_event_nav_prev" class="sc_events_form sc_event_nav_prev" method="POST" action="#sc_events_calendar_<?php echo uniqid(); ?>">
 			<input type="hidden" name="sc_month" value="<?php echo absint( $prev_month ); ?>">
 			<input type="hidden" name="sc_year" value="<?php echo absint( $prev_year ); ?>">
 			<input type="hidden" name="sc_current_month" value="<?php echo absint( $today_month ); ?>">
@@ -106,7 +106,7 @@ function sc_calendar_next_prev( $today_month, $today_year ) {
 			<input type="hidden" name="action" value="sc_load_calendar"/>
 			<input type="hidden" name="action_2" value="prev_month"/>
 		</form>
-		<form id="sc_event_nav_next" class="sc_events_form" method="POST" action="#sc_events_calendar_<?php echo uniqid(); ?>">
+		<form id="sc_event_nav_next" class="sc_events_form sc_event_nav_next" method="POST" action="#sc_events_calendar_<?php echo uniqid(); ?>">
 			<input type="hidden" name="sc_month" class="month" value="<?php echo absint( $next_month ); ?>">
 			<input type="hidden" name="sc_year" class="year" value="<?php echo absint( $next_year ); ?>">
 			<input type="hidden" name="sc_current_month" value="<?php echo absint( $today_month ); ?>">

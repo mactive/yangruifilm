@@ -108,7 +108,8 @@ a{cursor: pointer;}
 
 #more-5 a.more{ 
 	display: block; 
-	float: right; 
+	float: right;
+	color: #444;
 }
 
 /* share_area */

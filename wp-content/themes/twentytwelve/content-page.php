@@ -7,15 +7,21 @@
  * @since Twenty Twelve 1.0
  */
 ?>
-<style type="text/css">
-.wrapper{background: #fff !important;}
-.entry-content{text-align:justify; font-size: 14px; line-height: 1.2em;}
-</style>
-
 <?php 
     global $post;
     $post_slug=$post->post_name;
 ?>
+<style type="text/css">
+.wrapper{background: #fff !important;}
+.entry-content{
+	text-align:justify; font-size: 14px; line-height: 1.2em;
+	<?php if ($post_slug != 'schedule'): ?>
+		width:55em;
+	<?php endif; ?>
+}
+</style>
+
+
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
@@ -52,7 +58,7 @@
 	// more page
 	<?php if ($post_slug == 'about'): ?>
 	
-		var more_meta = $('<a class="more">more...</a>');
+		var more_meta = $('<a class="more">more</a>');
 		more_meta.appendTo('#more-5');
 		$('#more-5').parent().nextAll().hide();
 		$('#more-5').children('a.more').on('click',function(){

@@ -1,15 +1,24 @@
 #sc_events_calendar:after { display: block; float: none; clear: both; height: 0; content: "."; text-indent: -9999px; }
 #sc_calendar table { width: 100%; border-collapse: collapse; float:left; }
-#sc_calendar th { width: 13.25%; background: #fdfdfd; border: 1px solid #ddd; text-align: center; text-transform: capitalize; padding: 3px 4px!important; }
+#sc_calendar th { width: 13.25%;  border: 1px solid #ddd; text-align: center; position: relative;
+	text-transform: capitalize; padding: 3px 4px!important; height: 90px; color:#d3d3d4;}
 #sc_calendar td { width: 13.25%; height:90px; position: relative; border: 1px solid #ddd; font-size: 11px; padding: 0!important; }
 #sc_calendar td.calendar-day { background: #ffffff; height: 90px; }
 #sc_calendar td.calendar-day-np { background: #ffffff; }
 #sc_calendar td div.sc_day_div { padding: 8px; position: absolute; top: 0; right: 5px; }
 #sc_calendar td div.sc_day_div a,span{display: block; height: 14px;font-size: 12px; font-weight: bold; color: #666666;}
-#sc_events_calendar_head { padding: 8px; height: 26px; background: #ffffff; border: 1px solid #ddd; border-bottom: none; }
-#sc_event_select, #sc_event_nav_wrap, #sc_events_calendar_head h2 { width: 33%; float: left; margin: 0; clear:none; }
+#sc_calendar th div.sc_day_div { padding: 8px; position: absolute; top: 0; right: 5px; }
+#sc_calendar th div.sc_day_div a,span{display: block; height: 14px;font-size: 12px; font-weight: bold; color: #666666;}
+
+
+
+#sc_events_calendar_head { padding: 8px; height: 26px; background: #ffffff; border: 1px solid #ddd; border-bottom: none; position: relative; }
+#sc_event_select, #sc_event_nav_wrap, #sc_events_calendar_head h2 { width: 98%; float: left; margin: 0; position: absolute;}
 #sc_event_nav_wrap { text-align: right; }
 #sc_event_nav_wrap form { display: inline; text-align: right; }
+#sc_event_nav_wrap .sc_event_nav_prev{ float: left;}
+#sc_event_nav_wrap .sc_event_nav_next{ float: right;}
+
 #sc_events_calendar_head h2 { text-align: center; line-height: 26px; }
 #sc_events_calendar select, #sc_events_calendar input { margin: 0 5px 0 0; }
 .sc_small #sc_event_nav_wrap { margin: 8px 0 0 0; }

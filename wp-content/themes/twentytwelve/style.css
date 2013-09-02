@@ -188,7 +188,7 @@ img {
 	font-size: 11px;
 	font-size: 0.785714286rem;
 	line-height: 2.181818182;
-	font-weight: bold;
+	font-weight: normal;
 	text-transform: uppercase;
 	color: #636363;
 }
@@ -767,8 +767,8 @@ article.sticky .featured-post {
 .entry-summary p,
 .comment-content p,
 .mu_register p {
-	margin: 0 0 24px;
-	margin: 0 0 1.714285714rem;
+	margin: 0 0 17px;
+	/*margin: 0 0 1.714285714rem;*/
 	line-height: 1.714285714;
 }
 .entry-content ol,
@@ -1431,13 +1431,13 @@ img#wpstats {
 		/*display: inline-block;*/
 		text-decoration: none;
 		text-align: center;
-		font-size: 11px;
+		font-size: 12px;
 		font-weight: normal;
 	}
 	.main-navigation li a {
 		border-bottom: 0;
 		color: #6a6a6a;
-		line-height: 3.692307692;
+		line-height: 3.4;
 		/*text-transform: uppercase;*/
 		white-space: nowrap;
 	}
