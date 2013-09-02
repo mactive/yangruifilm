@@ -37,17 +37,29 @@ class FullSlide_Widget extends WP_Widget {
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$postType = $instance['postType'];
 		$width = $instance['width'];
-		$count = $instance['count'];
+		$count = $instance['count']*10;
 
 		// global $wpdb;
 		$args = array( 'numberposts' => $count, 'post_type' => $postType );
 		$posts = get_posts($args);
 		// print_r($posts);
 		wp_reset_postdata();
+		$for_index_posts = array();
+		foreach ($posts as $key => $post) {
+			# code...
+			$post_meta = get_post_meta($post->ID);
+            $index_page = $post_meta['wpcf-index-page'][0];
+            if ($index_page) {
+            	# code...
+            	array_push($for_index_posts,$post);
+            }
+
+		}
+
 
 
 		woocommerce_get_template( 'widgets/full_vertical_slider.php', array(
-			'posts'	=> $posts,
+			'posts'	=> $for_index_posts,
 			'width' => $width,
 			'count' => $count
 		), 'oscommerce_importer', untrailingslashit( plugin_dir_path( dirname( dirname( __FILE__ ) ) ) ) . '/oscommerce_importer/templates/' );

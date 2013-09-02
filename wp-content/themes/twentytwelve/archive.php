@@ -21,6 +21,10 @@ get_header(); ?>
 
 	<section id="primary">
 		<div id="content" role="main">
+		<?php 
+			global $query_string;
+			query_posts( $query_string . '&order=ASC' );
+		?>
 		<?php if ( have_posts() ) : ?>
 
 
