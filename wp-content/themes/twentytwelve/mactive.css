@@ -15,9 +15,9 @@ a{cursor: pointer;}
 	background: url(img/logo.png) no-repeat center center;
 }
 
-.sns { position: absolute; height: 20px; width: 120px; left: 20px; bottom: 50px;}
-.sns .flickr { float:left; display: block; height: 20px; width: 48px; background: url("img/sns_icon.png") no-repeat left; margin-right: 10px;}
-.sns .weibo  { float:left; display: block; height: 20px; width: 62px; background: url("img/sns_icon.png") no-repeat right;}
+.sns { position: absolute; height: 20px; width: 80px; left: 45px; bottom: 50px;}
+.sns .flickr { float:left; display: block; height: 20px; width: 48px; background: url("img/sns_icon.png") no-repeat left; }
+.sns .weibo  { float:left; display: block; height: 20px; width: 30px; background: url("img/sns_icon.png") no-repeat -48px top;}
 .sns .flickr:hover{background-image: url("img/sns_icon_hover.png");}
 .sns .weibo:hover{background-image: url("img/sns_icon_hover.png");}
 
@@ -27,10 +27,11 @@ a{cursor: pointer;}
 	background: url("http://www.yangruifilm.com/wp-content/uploads/2013/07/big-1.jpg") no-repeat center center; }
 .slide_cell{ height:100%;width:100%; position: relative; background-repeat: no-repeat; background-position: center; background-size:cover; background-color: #3e5c6d;}
 .slide_cell .slide_cell_bg{ cursor: pointer; position: absolute; top:0; left:0; z-index: 0; height:100%;width:100%; background-repeat: no-repeat; background-position: center; background-size:cover; background-color: #3e5c6d;}
-.slide_cell .control { z-index: 20; margin: 20px 80px; position: relative; padding: 20px 0px;}
-.slide_cell .control .video_info{ cursor: pointer; width:90%; height: 140px; margin: 45px 0; background-position: left center; background-repeat: no-repeat; }
-.slide_cell .control .video_info .video_title{display:block; font-weight: 700; font-size: 80px; color: #fff;}
-.slide_cell .control .video_info .video_customer{display:block; font-size: 26px; font-weight: bold; color: #fff;}
+.slide_cell .control { z-index: 20; margin: 20px 70px; position: relative; padding: 20px 0px;}
+.slide_cell .control .video_info{ cursor: pointer; width:90%; height: 140px; margin: 48px 0px 30px 0px; 
+	background-position: left center; background-repeat: no-repeat; }
+.slide_cell .control .video_info .video_title{display:block; font-weight: 700; font-size: 95px; color: #fff; line-height: 1em;}
+.slide_cell .control .video_info .video_customer{display:block; font-size: 16px; font-weight: bold; color: #fff; text-indent: 6px;}
 
 
 
@@ -38,13 +39,13 @@ a{cursor: pointer;}
 	width: 64px; height: 35px; 
 	background: url("img/arrows.png") no-repeat top left; 
 	display: block; position: absolute;
-	top:5px;
+	top:5px; left: 9px;
 }
 .slide_cell .control .next_btn{ 
 	width: 64px; height: 35px; 
 	background: url("img/arrows.png") no-repeat bottom left; 
 	display: block;position: absolute; 
-	bottom: 5px;
+	bottom: 5px; left: 9px;
 }
 
 
@@ -66,9 +67,9 @@ a{cursor: pointer;}
 }
 
 .video_thumbnail .thunbmail_info .info-title{ 
-	font-family: "Open Sans", Helvetica, Myriad, sans-serif; font-size:20px;
+	font-family: "Open Sans", Helvetica, Myriad, sans-serif; font-size:14px;
 	height: 20px; line-height: 20px;
-	position: absolute; top:30px; left:30px;
+	position: absolute; top:26px; left:26px;
 	z-index: 20;
 }
 .video_thumbnail .thunbmail_info .info-customer{}
