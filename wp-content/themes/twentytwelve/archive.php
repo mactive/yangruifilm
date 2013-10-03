@@ -51,10 +51,10 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 	<div class="overlay">
+		<a class="overlay-close"></a>
 
 		<!--[if !IE 6]><!-->
 		<div id="media_area">
-			<a class="overlay-close"></a>
 
 			<div id="mediaplayer" class="videoplayer">
 			</div>
@@ -90,14 +90,13 @@ get_header(); ?>
 		    archive_videowork.init(options);
 
 
-
-
 		    // play and download
-		    var video_width  = $(window).width() * 0.8;
+		    var video_width  = $(window).width() * 0.6;
 		    var video_height = video_width * 9 / 16;
 
 		    $('div.thunbmail_info > .info_bg').on('click',function( e ){
-		      console.log($(this).attr('rel'));
+		      // console.log($(this).attr('rel'));
+		      $('div.overlay').css('height',$(window).height());
 		      $('div.overlay').children('#media_area').show();
 		      $('div.overlay').children('#share_area').hide();
 
@@ -116,7 +115,7 @@ get_header(); ?>
 
 		    //jwplayer().getPlugin("controlbar").hide();
 		    var marginOffset = $(window).height() - video_height;
-		    console.log(marginOffset);
+		    // console.log(marginOffset);
 		    $("#media_area").css('margin', marginOffset/2+'px auto');
 		    $("#media_area").css({'width':video_width+'px','':video_height+'px'});
 

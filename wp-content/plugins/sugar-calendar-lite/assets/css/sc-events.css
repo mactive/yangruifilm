@@ -5,8 +5,16 @@
 #sc_calendar td { width: 13.25%; height:90px; position: relative; border: 1px solid #ddd; font-size: 11px; padding: 0!important; }
 #sc_calendar td.calendar-day { background: #ffffff; height: 90px; }
 #sc_calendar td.calendar-day-np { background: #ffffff; }
-#sc_calendar td div.sc_day_div { padding: 8px; position: absolute; top: 0; right: 5px; }
-#sc_calendar td div.sc_day_div a,span{display: block; height: 14px;font-size: 12px; font-weight: bold; color: #666666;}
+#sc_calendar td div.sc_day_div { padding: 8px; position: absolute; top: 0; right: 5px; 
+	width: 80%;
+
+}
+#sc_calendar td div.sc_day_div a,span{
+	display: block; font-size: 12px; 
+	height: 2em; line-height: 2em; margin-top:  1em !important;
+	font-weight: 200; 
+	color: #666666;
+}
 #sc_calendar th div.sc_day_div { padding: 8px; position: absolute; top: 0; right: 5px; }
 #sc_calendar th div.sc_day_div a,span{display: block; height: 14px;font-size: 12px; font-weight: bold; color: #666666;}
 

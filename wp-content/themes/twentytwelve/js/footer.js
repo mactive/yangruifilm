@@ -1,6 +1,4 @@
 (function($){
-
-
     // $('.slide_1').height($('.wrapper').height());
 
 	// var win_height = $(window).height();

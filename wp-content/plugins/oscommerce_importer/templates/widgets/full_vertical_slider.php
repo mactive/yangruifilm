@@ -5,7 +5,6 @@
 ?>
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/slides.css">
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/slides.js"></script>
-<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/jwplayer/jwplayer.js"></script>
 
 
 <?php if ( $posts ) : ?>
@@ -38,17 +37,9 @@
     </div>
     
 
-    <div class="overlay">
 
-        <!--[if !IE 6]><!-->
-        <div id="media_area">
-            <a class="overlay-close"></a>
-
-            <div id="mediaplayer" class="videoplayer">
-            </div>
-        </div>
-        <!--<![endif]-->
-    </div>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/jwplayer/jwplayer.js"></script>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/video_work.js"></script>
 
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/slides_control.js"></script>
 

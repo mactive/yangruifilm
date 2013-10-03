@@ -8,50 +8,15 @@
  */
 
 get_header(); ?>
-<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/jwplayer/jwplayer.js"></script>
-
-        <script>
-        /*
-            Get the curent slide
-        */
-
-        jQuery(document).ready(function ($) {
-
-            // play and download
-
-            var video_width  = $(window).width() * 0.8;
-            var video_height = video_width * 9 / 16;
-
-            $('div.slide_cell_bg, div.video_info').on('click',function( e ){
-                console.log($(this).attr('rel'));
-                $('div.overlay').children('#media_area').show();
-                $('div.overlay').fadeIn();
-
-                jwplayer("mediaplayer").setup({
-                    flashplayer: "<?php bloginfo( 'template_url' ); ?>/jwplayer/player.swf",
-                    width:video_width,
-                    height:video_height,
-                    levels: [
-                        {file: $(this).attr('rel')}
-                    ],
-                    autostart: true
-                });
-            });
-
-            //jwplayer().getPlugin("controlbar").hide();
-            var marginOffset = $(window).height() - video_height;
-            console.log(marginOffset);
-            $("#media_area").css('margin', marginOffset/2+'px auto');
-            $("#media_area").css({'width':video_width+'px','':video_height+'px'});
-
-            // close 
-            $('a.overlay-close').click(function(){
-                $('div.overlay').fadeOut();
-            })
-
-
-        });
-    </script>
+<style type="text/css">
+    .site-content{
+        width: 100%;
+        padding: 0;
+    }
+    .slide_cell .control{ margin-top:  0px; }
+    .slide_cell .control .video_info .video_title { display: block;}
+    .slide_cell .control .video_info .video_customer { display: block;}
+</style>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
@@ -66,17 +31,18 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-	
-	<div class="overlay">
+<script type="text/javascript">
+(function($){
+    $('.slide_cell').height($('.wrapper').height());
+    $(window).resize(function() {
+        $('.slide_cell').height($('.wrapper').height());
+    });
 
-        <!--[if !IE 6]><!-->
-        <div id="media_area">
-            <a class="overlay-close"></a>
 
-            <div id="mediaplayer" class="videoplayer">
-            </div>
-        </div>
-        <!--<![endif]-->
-    </div>
+})(jQuery);
+</script>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/jwplayer/jwplayer.js"></script>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/video_work.js"></script>
+
 
 <?php get_footer(); ?>
