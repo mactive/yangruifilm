@@ -48,11 +48,16 @@ class FullSlide_Widget extends WP_Widget {
 		foreach ($posts as $key => $post) {
 			# code...
 			$post_meta = get_post_meta($post->ID);
-            $index_page = $post_meta['wpcf-index-page'][0];
-            if ($index_page) {
-            	# code...
+			if (is_array($post_meta['wpcf-index-page'])) {
+            	$index_page = $post_meta['wpcf-index-page'][0];
             	array_push($for_index_posts,$post);
-            }
+			}
+
+            // $index_page = $post_meta['wpcf-index-page'][0];
+            // if ($index_page) {
+            // 	# code...
+            // 	array_push($for_index_posts,$post);
+            // }
 
 		}
 
