@@ -76,4 +76,8 @@
 
 })(jQuery);
 </script>
-	
+
+<?php if ($post_slug == 'contact'): ?>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/single_resize.js"></script>
+<?php endif; ?>
+

@@ -30,8 +30,8 @@ a{cursor: pointer;}
 	width: 100%;
 	height: auto;
 	background: url("http://www.yangruifilm.com/wp-content/uploads/2013/07/big-1.jpg") no-repeat center center; }
-.slide_cell{ height:100%;width:100%; position: relative; background-repeat: no-repeat; background-position: center; background-size:cover; background-color: #3e5c6d;}
-.slide_cell .slide_cell_bg{ cursor: pointer; position: absolute; top:0; left:0; z-index: 0; height:100%;width:100%; background-repeat: no-repeat; background-position: center; background-size:cover; background-color: #3e5c6d;}
+.slide_cell{ height:100%;width:100%; position: relative; background-repeat: no-repeat; background-position: center; background-size:cover; background-color: #fff;}
+.slide_cell .slide_cell_bg{ cursor: pointer; position: absolute; top:0; left:0; z-index: 0; height:100%;width:100%; background-repeat: no-repeat; background-position: center; background-size:cover; background-color: #fff;}
 .slide_cell .control { z-index: 20; margin: 20px 70px; position: relative; padding: 20px 0px;}
 .slide_cell .control .video_info{ cursor: pointer; width:90%; height: 140px; margin: 48px 0px 30px 0px; 
 	background-position: left center; background-repeat: no-repeat; }
@@ -193,10 +193,11 @@ a{cursor: pointer;}
 .main-navigation a:hover {
 	color: #21759b;
 }
-.main-navigation ul.nav-menu,
+
+/*.main-navigation ul.nav-menu,
 .main-navigation div.nav-menu > ul {
 	display: none;
-}
+}*/
 .main-navigation ul.nav-menu.toggled-on,
 .menu-toggle {
 	display: inline-block;

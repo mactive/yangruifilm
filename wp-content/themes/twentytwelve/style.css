@@ -1431,7 +1431,6 @@ img#wpstats {
 	}
 	.main-navigation li a,
 	.main-navigation li {
-		/*display: inline-block;*/
 		text-decoration: none;
 		text-align: center;
 		font-size: 12px;
@@ -1441,7 +1440,6 @@ img#wpstats {
 		border-bottom: 0;
 		color: #6a6a6a;
 		line-height: 3.4;
-		/*text-transform: uppercase;*/
 		white-space: nowrap;
 	}
 	.main-navigation li a:hover {
@@ -1555,7 +1553,6 @@ img#wpstats {
 	.site-content {
 		float: left;
 		width: 90%; padding:3% 5%; font-size: 14px;
-		/*background: #3e5c6d;*/
 	}
 }
 
