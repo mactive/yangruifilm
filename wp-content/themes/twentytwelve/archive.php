@@ -23,7 +23,7 @@ get_header(); ?>
 		<div id="content" role="main">
 		<?php 
 			global $query_string;
-			query_posts( $query_string . '&order=ASC' );
+			query_posts( $query_string . '&order=DESC' );
 		?>
 		<?php if ( have_posts() ) : ?>
 
