@@ -538,11 +538,13 @@ a:hover {
 /* Header */
 .site-header {
 	width: 180px;
-	float: left;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*float: left;*/
 	padding: 0;
 	background: #ffffff;
 	height: 100%;
-	position: relative;
 }
 .site-header h1,
 .site-header h2 {

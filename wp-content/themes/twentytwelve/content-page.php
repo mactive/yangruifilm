@@ -13,12 +13,6 @@
 ?>
 <style type="text/css">
 .wrapper{background: #fff !important;}
-.entry-content{
-	text-align:justify; font-size: 14px; line-height: 1.2em;
-	<?php if ($post_slug != 'schedule'): ?>
-		width:55em;
-	<?php endif; ?>
-}
 </style>
 
 
