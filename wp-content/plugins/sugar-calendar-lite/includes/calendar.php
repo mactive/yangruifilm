@@ -73,7 +73,7 @@ function sc_get_events_calendar( $year_override = null ) {
 				<input name="sc_nonce" type="hidden" value="<?php echo wp_create_nonce('sc_calendar_nonce') ?>" />
 			</form> -->
 
-			<h2 id="sc_calendar_title"><?php echo esc_html( $months[$today_month] . ' ' . $today_year ); ?></h2>
+			<h2 id="sc_calendar_title"><?php echo esc_html( $today_year .' - '.$today_month ); ?></h2>
 			<?php echo sc_calendar_next_prev( $today_month, $today_year ); ?>
 		</div><!--end #sc_events_calendar_head-->
 		<div id="sc_calendar">
@@ -101,7 +101,7 @@ function sc_calendar_next_prev( $today_month, $today_year ) {
 			<input type="hidden" name="sc_month" value="<?php echo absint( $prev_month ); ?>">
 			<input type="hidden" name="sc_year" value="<?php echo absint( $prev_year ); ?>">
 			<input type="hidden" name="sc_current_month" value="<?php echo absint( $today_month ); ?>">
-			<input type="submit" class="sc_calendar_submit" name="sc_prev" value="<?php _e('Previous', 'pippin_sc'); ?>"/>
+			<input type="submit" class="sc_calendar_submit" name="sc_prev" value="&lt;"/>
 			<input type="hidden" name="sc_nonce" value="<?php echo wp_create_nonce( 'sc_calendar_nonce' ) ?>" />
 			<input type="hidden" name="action" value="sc_load_calendar"/>
 			<input type="hidden" name="action_2" value="prev_month"/>
@@ -110,7 +110,7 @@ function sc_calendar_next_prev( $today_month, $today_year ) {
 			<input type="hidden" name="sc_month" class="month" value="<?php echo absint( $next_month ); ?>">
 			<input type="hidden" name="sc_year" class="year" value="<?php echo absint( $next_year ); ?>">
 			<input type="hidden" name="sc_current_month" value="<?php echo absint( $today_month ); ?>">
-			<input type="submit" class="sc_calendar_submit" name="sc_next" value="<?php _e( 'Next', 'pippin_sc' ); ?>"/>
+			<input type="submit" class="sc_calendar_submit" name="sc_next" value="&gt;"/>
 			<input type="hidden" name="sc_nonce" value="<?php echo wp_create_nonce( 'sc_calendar_nonce' ) ?>" />
 			<input type="hidden" name="action" value="sc_load_calendar"/>
 			<input type="hidden" name="action_2" value="next_month"/>

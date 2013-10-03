@@ -27,7 +27,7 @@
 #sc_event_nav_wrap .sc_event_nav_prev{ float: left;}
 #sc_event_nav_wrap .sc_event_nav_next{ float: right;}
 
-#sc_events_calendar_head h2 { text-align: center; line-height: 26px; }
+#sc_events_calendar_head h2 { text-align: center; line-height: 26px; font-weight: 200; }
 #sc_events_calendar select, #sc_events_calendar input { margin: 0 5px 0 0; }
 .sc_small #sc_event_nav_wrap { margin: 8px 0 0 0; }
 .sc_small #sc_event_nav_wrap, .sc_small #sc_event_select { float: none; width: 100%; }
