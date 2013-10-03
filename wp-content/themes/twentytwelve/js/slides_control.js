@@ -12,6 +12,21 @@ jQuery(document).ready(function ($) {
     var _height = parseInt( $(window).height(), 10);
     var _width = parseInt($("#main").width(), 10);
 
+
+    // $("#slides").slidesjs({
+    //     width: _width,
+    //     height: _height,
+    //     slide: {
+    //         interval: 800, // [Number] Interval of fade in milliseconds
+    //         browserWindow: false,// [Boolean] Slide in/out from browser window, bad ass
+    //         direction: "up"
+    //     },
+    //     navigation: {
+    //       active: false,
+    //       effect: "slide"
+    //     }
+    //   });
+
     $("#slides").slides({
         navigateEnd: function( current ) {
             currentSlide( current );
@@ -20,14 +35,22 @@ jQuery(document).ready(function ($) {
             currentSlide( 1 );
         },
         slide: {
-            interval: 800, // [Number] Interval of fade in milliseconds
+            interval: 700, // [Number] Interval of fade in milliseconds
             browserWindow: false // [Boolean] Slide in/out from browser window, bad ass
         },
         navigation: false,
         pagination: false,
         direction: "up",
         width: _width,
-        height: _height
+        height: _height,
+        animationComplete: function(current) {
+            // Get the "current" slide number
+            
+            console.log(current);
+        },
+        animationStart: function( e ){
+            alert('ddd');
+        }
     });
     
     $(window).resize(function() {
@@ -74,35 +97,65 @@ jQuery(document).ready(function ($) {
 
     $("a[rel=previous]").click(function(e){
         $("#slides").slides("previous");
+        checkAmimation();
     });
     
     $("a[rel=next]").click(function(e){
         $("#slides").slides("next");
+        checkAmimation();
     });
 
+    // finished amimation
+    
+    var checkAmimation = function(){
+        var item = $('.slidesControl').children(':visible').find('.control');
 
-    $(".controls").click(function(e) {
-        e.preventDefault();
-        
-        // Example status method usage
-        var slidesStatus = $("#slides").slides("status","state");
-        
-        if (!slidesStatus || slidesStatus === "stopped") {
+        hideElement(item);
 
-            // Example play method usage
-            $("#slides").slides("play");
+        $( ".slidesControl" ).promise().done(function(){
+            showElement(item);
+        });
+    };
 
-            // Change text
-            $(this).text("Stop");
-        } else {
-            
-            // Example stop method usage
-            $("#slides").slides("stop");
-            
-            // Change text
-            $(this).text("Play");
-        }
-    });
+    /**
+     * stop and show animations
+     */
+    
+    var showElement = function( item ){
+
+        var prevBtn = item.find('a[rel=previous]');
+        var nextBtn = item.find('a[rel=next]');
+        var title  = item.find('.video_title');
+        var customer  = item.find('.video_customer');
+        var delayTime = 300;
+
+        console.log(title.text());
+
+
+        title.delay(delayTime).fadeIn();
+        customer.delay(delayTime*2).fadeIn();
+
+        prevBtn.delay(delayTime*3).fadeIn();
+        nextBtn.delay(delayTime*3).fadeIn();
+    };
+
+    var hideElement = function ( item ){
+
+        var prevBtn = item.find('a[rel=previous]');
+        var nextBtn = item.find('a[rel=next]');
+        var title  = item.find('.video_title');
+        var customer  = item.find('.video_customer');
+
+        prevBtn.fadeOut();
+        nextBtn.fadeOut();
+        title.fadeOut();
+        customer.fadeOut();
+    };
+
+    // first time init
+    var cont = $('.slidesControl').children(':visible:first-child').find('.control');
+    showElement(cont);
+
 
 
     // play and download

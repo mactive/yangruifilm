@@ -24,12 +24,12 @@
     	?>
     		<div class="slide_cell">
                 <div class="control">
-                    <a class="prev_btn" rel="previous"></a>
+                    <a class="prev_btn slider_handler" rel="previous"></a>
                     <div class="video_info" rel="<?= $video_play ?>">
-                        <span class="video_title"><?= $post->post_title ?></span>
-                        <span class="video_customer"><?= $customer ?></span>
+                        <div class="video_title"><?= $post->post_title ?></div>
+                        <div class="video_customer"><?= $customer ?></div>
                     </div>
-                    <a class="next_btn" rel="next"> </a>
+                    <a class="next_btn slider_handler" rel="next"> </a>
                 </div>
                 <div class="slide_cell_bg" rel="<?= $video_play ?>" style="background-image:url(<?= $big_img[0] ?>);"></div>
             </div>
