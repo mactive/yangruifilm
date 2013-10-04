@@ -116,12 +116,10 @@ get_header(); ?>
 		    var marginYOffset = ($(window).height() - video_height)/2;
 		    $("#media_area").css('margin', marginYOffset+'px auto');
 		    $("#media_area").css({'width':video_width+'px','':video_height+'px'});
-		    $('.site-header').height($(window).height());
 
 		    $(window).resize(function() {
 		        var marginYOffset = ($(window).height() - video_height)/2;
 		        $("#media_area").css('margin', marginYOffset+'px auto');
-			    $('.site-header').height($(window).height());
 		    });
 
 		    $('div.info-btn > .share').on('click',function( e ){

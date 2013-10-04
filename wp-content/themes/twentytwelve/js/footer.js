@@ -8,7 +8,9 @@
 
 
 	//just for single page
-
-
+	$('.site-header').height($(window).height());
+	$(window).resize(function() {
+		$('.site-header').height($(window).height());
+	});
 
 })(jQuery);
