@@ -67,7 +67,6 @@
 		
 		var table = $('table.calendar');
 		var td_width =  $('table.calendar tbody').children('tr:eq(1)').children('td:eq(0)').width();
-		console.log(td_width);
 		var td_height = parseInt(td_width * 9 / 16 );
 
 		// $('table.calendar tbody').children('tr:gt(0)').children('td').css('height',td_height+'px');

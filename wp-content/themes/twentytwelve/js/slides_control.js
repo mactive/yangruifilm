@@ -9,7 +9,10 @@ jQuery(document).ready(function ($) {
         $(".current_slide").text(current + " of " + $("#slides").slides("status","total") );
     }
 
-    var _height = parseInt( $(window).height(), 10);
+    var minHeight = 650;
+
+    var _height = parseInt( $(window).height(), 10) ;
+    _height = _height < minHeight ? minHeight : _height;
     var _width = parseInt($("#main").width(), 10);
 
 
@@ -42,19 +45,12 @@ jQuery(document).ready(function ($) {
         pagination: false,
         direction: "up",
         width: _width,
-        height: _height,
-        animationComplete: function(current) {
-            // Get the "current" slide number
-            
-            console.log(current);
-        },
-        animationStart: function( e ){
-            alert('ddd');
-        }
+        height: _height
     });
     
     $(window).resize(function() {
         var _height = parseInt( $(window).height(), 10);
+            _height = _height < minHeight ? minHeight : _height;
         var _width = parseInt($("#main").width(), 10);
         $('.slidesContainer').width('100%');
         $('.slidesContainer').height(_height);

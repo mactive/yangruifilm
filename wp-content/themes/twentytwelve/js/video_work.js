@@ -31,14 +31,18 @@ jQuery(document).ready(function ($) {
     });
 
     //jwplayer().getPlugin("controlbar").hide();
-    var marginOffset = $(window).height() - video_height;
-    // console.log(marginOffset);
-    $("#media_area").css('margin', marginOffset/2+'px auto');
+    var marginYOffset = ($(window).height() - video_height)/2;
+    $("#media_area").css('margin', marginYOffset+'px auto');
     $("#media_area").css({'width':video_width+'px','':video_height+'px'});
 
     // close 
     $('a.overlay-close, .overlay').click(function(){
         $('div.overlay').fadeOut();
     })
+
+    $(window).resize(function() {
+        var marginYOffset = ($(window).height() - video_height)/2;
+        $("#media_area").css('margin', marginYOffset+'px auto');
+    });
 
 });

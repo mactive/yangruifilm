@@ -55,23 +55,20 @@ get_header(); ?>
 
 		<!--[if !IE 6]><!-->
 		<div id="media_area">
-
 			<div id="mediaplayer" class="videoplayer">
 			</div>
 		</div>
 		<!--<![endif]-->
 
 		<div id="share_area">
-			<a class="overlay-close"></a>
-
 			<div class="share-cell weibo_share">
 
 			</div>
-			<div class="share-cell tecent_share">
+<!-- 			<div class="share-cell tecent_share">
 			</div>
 			<div class="share-cell">
 				Others
-			</div>
+			</div> -->
 			
 		</div>
 	</div>
@@ -99,6 +96,8 @@ get_header(); ?>
 		      $('div.overlay').css('height',$(window).height());
 		      $('div.overlay').children('#media_area').show();
 		      $('div.overlay').children('#share_area').hide();
+		      $('div.overlay').css('top',$(window).scrollTop());
+
 
 		      $('div.overlay').fadeIn();
 
@@ -114,12 +113,16 @@ get_header(); ?>
 		    });
 
 		    //jwplayer().getPlugin("controlbar").hide();
-		    var marginOffset = $(window).height() - video_height;
-		    // console.log(marginOffset);
-		    $("#media_area").css('margin', marginOffset/2+'px auto');
+		    var marginYOffset = ($(window).height() - video_height)/2;
+		    $("#media_area").css('margin', marginYOffset+'px auto');
 		    $("#media_area").css({'width':video_width+'px','':video_height+'px'});
+		    $('.site-header').height($(window).height());
 
-
+		    $(window).resize(function() {
+		        var marginYOffset = ($(window).height() - video_height)/2;
+		        $("#media_area").css('margin', marginYOffset+'px auto');
+			    $('.site-header').height($(window).height());
+		    });
 
 		    $('div.info-btn > .share').on('click',function( e ){
 		    	e.preventDefault();
@@ -174,7 +177,7 @@ get_header(); ?>
 
 
 		    // close 
-		    $('a.overlay-close').click(function(){
+		    $('a.overlay-close, .overlay').click(function(){
 		      $('div.overlay').fadeOut();
 		    })
 

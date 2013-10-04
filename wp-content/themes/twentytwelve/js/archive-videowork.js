@@ -11,7 +11,6 @@ var archive_videowork = {
     var self = this;
 
     var width = mainBody.children('div').width();
-    console.log(width);
     var height = width / 16 * 9 ;
     mainBody.children('div').css('height',height+'px');
 

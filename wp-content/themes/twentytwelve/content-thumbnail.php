@@ -12,9 +12,8 @@
 		<?php 
 			global $post;
 			$id = $post->ID; 
-			$args = array( 'post_type' => 'attachment', 'post_parent'=> $id ); // 不区分png jpg 图
+			$args = array( 'post_type' => 'attachment', 'post_parent'=> $id, 'post_mime_type' =>'image' ); // 不区分png jpg 图
 			$myposts = get_posts( $args );
-			print_r($myposts);
 			// attachment
 			$attachment = $myposts[0];
 			// thumbnail
