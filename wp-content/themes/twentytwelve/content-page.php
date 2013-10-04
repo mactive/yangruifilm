@@ -65,11 +65,19 @@
 
 	<?php if ($post_slug == 'schedule'): ?>
 		
-		var table = $('table.calendar');
 		var td_width =  $('table.calendar tbody').children('tr:eq(1)').children('td:eq(0)').width();
-		var td_height = parseInt(td_width * 9 / 16 );
+		var td_height = parseInt(td_width * 7 / 10 );
+		$('table.calendar tbody').children('tr').children('td,th').css('height',td_height+'px');
 
-		// $('table.calendar tbody').children('tr:gt(0)').children('td').css('height',td_height+'px');
+		$(window).resize(function() {
+			var td_width =  $('table.calendar tbody').children('tr:eq(1)').children('td:eq(0)').width();
+			var td_height = parseInt(td_width * 7 / 10 );
+			$('table.calendar tbody').children('tr').children('td,th').css('height',td_height+'px');
+		});
+
+
+	<?php endif; ?>
+	<?php if ($post_slug == 'contact'): ?>
 
 	<?php endif; ?>
 
